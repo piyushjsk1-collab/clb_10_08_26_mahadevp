@@ -1,1 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+<title>Mahadev Trends — Premium Fashion & Apparel House</title>
+<meta name="description" content="Discover handpicked ethnic wear, designer sarees, bespoke tailoring, and modern casuals at Mahadev Trends. Premium fabrics and custom fittings.">
+<meta name="robots" content="index, follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+:root {
+  --bg-main: #fdfbf7;
+  --bg-card: #ffffff;
+  --bg-subtle: #f5f0e6;
+  --primary-gold: #d97706;
+  --primary-gold-hover: #b45309;
+  --accent-soft: #fef3c7;
+  --text-primary: #1c1917;
+  --text-secondary: #57534e;
+  --border-color: #e7e5e4;
+  --card-shadow: 0 15px 35px rgba(28, 25, 23, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background: var(--bg-main);
+  color: var(--text-primary);
+}
+
+body { line-height: 1.6; }
+
+/* NAVBAR */
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 16px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(253, 251, 247, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+.logo-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--primary-gold);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--primary-gold); }
+
+.nav-btn {
+  text-decoration: none;
+  background: var(--text-primary);
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(28, 25, 23, 0.15);
+}
+
+.nav-btn:hover {
+  background: var(--primary-gold);
+  transform: translateY(-2px);
+}
+
+/* HERO SECTION (MOBILE TOP IMAGE LAYOUT) */
+.hero-split {
+  padding: 110px 6% 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+/* HERO IMAGE CARD (MOBILE PAR PEHLE/TOP PE DIKHEGI) */
+.hero-image-card {
+  order: 1;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 4px solid #ffffff;
+  box-shadow: var(--card-shadow);
+  display: block;
+  background: #fff;
+  position: relative;
+  text-decoration: none;
+  transition: 0.3s transform ease, 0.3s box-shadow ease;
+}
+
+.hero-image-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(28, 25, 23, 0.12);
+}
+
+.hero-image-card img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  display: block;
+  object-fit: cover;
+}
+
+.image-overlay-box {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  background: rgba(28, 25, 23, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.overlay-info .title {
+  font-size: 13px;
+  font-weight: 800;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.overlay-info .subtitle {
+  font-size: 11px;
+  color: #d6d3d1;
+  font-weight: 500;
+}
+
+.wa-badge-btn {
+  background: #25D366;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 7px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+/* HERO TEXT SIDE (MOBILE PAR IMAGE KE NICHE AAYEGA) */
+.hero-text-side {
+  order: 2;
+  text-align: center;
+}
+
+.badge-tag {
+  background: var(--accent-soft);
+  border: 1px solid rgba(217, 119, 6, 0.3);
+  color: var(--primary-gold);
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-text-side h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.hero-text-side h1 span { color: var(--primary-gold); }
+
+.hero-text-side p {
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 22px;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 25px;
+  align-items: center;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.highlight-item i {
+  color: var(--primary-gold);
+  font-size: 15px;
+}
+
+.btn-primary {
+  text-decoration: none;
+  background: var(--text-primary);
+  color: #fff;
+  padding: 14px 34px;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: 0.3s;
+  box-shadow: 0 8px 25px rgba(28, 25, 23, 0.18);
+}
+
+.btn-primary:hover {
+  background: var(--primary-gold);
+  transform: translateY(-2px);
+}
+
+/* STATS STRIP */
+.stats-strip-section {
+  padding: 10px 6% 40px;
+}
+
+.stats-strip {
+  max-width: 1250px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 22px 25px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  box-shadow: var(--card-shadow);
+  text-align: center;
+}
+
+.stat-cell h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--primary-gold);
+}
+
+.stat-cell p {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* LOOKBOOK / FEATURED CATEGORIES */
+.lookbook-section {
+  padding: 50px 6%;
+  background: var(--bg-subtle);
+}
+
+.section-head {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.section-head h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.section-head p { color: var(--text-secondary); font-size: 14px; }
+
+.lookbook-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.lookbook-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  transition: 0.3s;
+}
+
+.lookbook-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-gold);
+}
+
+.lookbook-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+.lookbook-content {
+  padding: 20px;
+}
+
+.lookbook-content h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.lookbook-content p {
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.card-cta-link {
+  text-decoration: none;
+  color: var(--primary-gold);
+  font-weight: 800;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* SERVICES / ALTERNATING FEATURES */
+.services-section {
+  padding: 60px 6%;
+}
+
+.feature-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.feature-row-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 25px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  box-shadow: var(--card-shadow);
+  transition: 0.3s;
+}
+
+.feature-row-card:hover {
+  border-color: var(--primary-gold);
+}
+
+.feature-icon-box {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  color: var(--primary-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.feature-info h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.feature-info p {
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+/* QUALITY GUARANTEE BANNER */
+.banner-guarantee {
+  padding: 30px 6% 60px;
+}
+
+.guarantee-box {
+  max-width: 1250px;
+  margin: 0 auto;
+  background: var(--text-primary);
+  color: #fff;
+  border-radius: 24px;
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.guarantee-box h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.guarantee-box p {
+  color: #d6d3d1;
+  font-size: 14px;
+  max-width: 680px;
+  margin: 0 auto 22px;
+}
+
+.guarantee-points {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.g-point {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #f5f5f4;
+}
+
+.g-point i { color: var(--primary-gold); }
+
+/* FAQ */
+.faq-section { padding: 50px 6%; background: var(--bg-subtle); }
+.faq-container {
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-item {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: var(--card-shadow);
+}
+
+.faq-item h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.faq-item p { color: var(--text-secondary); font-size: 13px; line-height: 1.6; }
+
+/* LEGAL & AD COMPLIANCE DISCLAIMER */
+.legal-section {
+  padding: 50px 6%;
+  background: #ffffff;
+  border-top: 1px solid var(--border-color);
+}
+
+.legal-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.legal-container h3 { font-size: 15px; font-weight: 700; margin: 18px 0 6px; color: var(--text-primary); }
+.legal-container h3:first-child { margin-top: 0; }
+.legal-container p { color: var(--text-secondary); font-size: 13px; line-height: 1.7; margin-bottom: 10px; }
+
+/* CTA */
+.cta-section { padding: 30px 6% 70px; }
+.cta-box {
+  max-width: 1250px;
+  margin: 0 auto;
+  background: var(--primary-gold);
+  border-radius: 24px;
+  padding: 40px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.cta-box h2 { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; margin-bottom: 10px; }
+.cta-box p { font-size: 14px; margin: 0 auto 22px; max-width: 600px; opacity: 0.95; }
+
+.cta-btn-light {
+  text-decoration: none;
+  background: #fff;
+  color: var(--text-primary);
+  padding: 13px 30px;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+/* FOOTER */
+footer {
+  background: #0f172a;
+  color: #fff;
+  padding: 50px 6% 25px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  max-width: 1250px;
+  margin: 0 auto 40px;
+}
+
+.footer-col h4 { font-size: 16px; font-weight: 700; margin-bottom: 16px; color: #fff; }
+.footer-col p { color: #94a3b8; font-size: 13px; line-height: 1.6; }
+
+.footer-links { display: flex; flex-direction: column; gap: 10px; }
+.footer-links a { text-decoration: none; color: #94a3b8; font-size: 13px; transition: 0.3s; }
+.footer-links a:hover { color: var(--primary-gold); }
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #64748b;
+  font-size: 12px;
+}
+
+/* FLOATING WHATSAPP */
+.float-wa {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 52px;
+  height: 52px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+  z-index: 1000;
+  transition: 0.3s;
+}
+
+/* DESKTOP & TABLET MEDIA QUERIES */
+@media (min-width: 768px) {
+  .hero-split {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    padding: 140px 6% 60px;
+  }
+  .hero-text-side {
+    order: 1;
+    text-align: left;
+  }
+  .hero-text-side h1 { font-size: 46px; }
+  .hero-text-side p { margin-left: 0; margin-right: 0; }
+  .hero-highlights { align-items: flex-start; }
+  .hero-image-card {
+    order: 2;
+    max-width: 100%;
+  }
+  .stats-strip { grid-template-columns: repeat(4, 1fr); }
+  .lookbook-grid { grid-template-columns: repeat(3, 1fr); }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 992px) {
+  nav { padding: 18px 8%; }
+  .hero-split { padding: 150px 8% 70px; }
+  .hero-text-side h1 { font-size: 50px; }
+  .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1.2fr; }
+}
+
+@media (max-width: 767px) {
+  .nav-links { display: none; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">
+    <div class="logo-badge">
+      <i class="fa-solid fa-shirt"></i>
+    </div>
+    Mahadev Trends
+  </div>
+
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#lookbook">Lookbook</a>
+    <a href="#services">Services</a>
+    <a href="#faq">FAQ</a>
+    <a href="#legal">Legal & Policies</a>
+  </div>
+
+  <a href="#" data-wa class="nav-btn" target="_blank" rel="noopener">
+    <i class="fa-brands fa-whatsapp"></i>
+    Connect On WhatsApp
+  </a>
+</nav>
+
+<section class="hero-split">
+
+  <a href="#" data-wa class="hero-image-card" target="_blank" rel="noopener" title="Inquire on WhatsApp">
+    <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=80" alt="Mahadev Trends Apparel Collection">
+    <div class="image-overlay-box">
+      <div class="overlay-info">
+        <span class="title"><i class="fa-solid fa-fire"></i> New Season Collection</span>
+        <span class="subtitle">Tap to check size & stock on WhatsApp</span>
+      </div>
+      <div class="wa-badge-btn">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      </div>
+    </div>
+  </a>
+
+  <div class="hero-text-side">
+    <div class="badge-tag">
+      <i class="fa-solid fa-sparkles"></i>
+      Fashion & Custom Apparel Studio
+    </div>
+
+    <h1>Redefining Elegance With <span>Mahadev Trends</span></h1>
+
+    <p>Discover handpicked festive ethnic collections, contemporary designer outfits, and custom tailoring crafted from high-grade fabrics.</p>
+
+    <div class="hero-highlights">
+      <div class="highlight-item"><i class="fa-solid fa-circle-check"></i> Handcrafted Ethnic & Festive Outfits</div>
+      <div class="highlight-item"><i class="fa-solid fa-circle-check"></i> Made-to-Measure Custom Stitching</div>
+      <div class="highlight-item"><i class="fa-solid fa-circle-check"></i> Pan-India Fast Delivery Assistance</div>
+    </div>
+
+    <a href="#" data-wa class="btn-primary" target="_blank" rel="noopener">
+      <i class="fa-brands fa-whatsapp"></i>
+      Explore Latest Catalog
+    </a>
+  </div>
+
+</section>
+
+<section class="stats-strip-section">
+  <div class="stats-strip">
+    <div class="stat-cell">
+      <h3>Premium</h3>
+      <p>Fabric Quality</p>
+    </div>
+    <div class="stat-cell">
+      <h3>Custom</h3>
+      <p>Bespoke Fitting</p>
+    </div>
+    <div class="stat-cell">
+      <h3>Festive</h3>
+      <p>& Bridal Collections</p>
+    </div>
+    <div class="stat-cell">
+      <h3>Direct</h3>
+      <p>WhatsApp Assistance</p>
+    </div>
+  </div>
+</section>
+
+<section class="lookbook-section" id="lookbook">
+  <div class="section-head">
+    <h2>Featured Lookbook</h2>
+    <p>Explore our most popular apparel categories designed for modern style and comfort.</p>
+  </div>
+
+  <div class="lookbook-grid">
+    <div class="lookbook-card">
+      <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80" alt="Ethnic Wear Collection" loading="lazy">
+      <div class="lookbook-content">
+        <h3>Festive & Ethnic Outfits</h3>
+        <p>Designer suits, festive lehengas, and traditional wear curated for special celebrations.</p>
+        <a href="#" data-wa class="card-cta-link" target="_blank" rel="noopener">Inquire Designs <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="lookbook-card">
+      <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80" alt="Designer Sarees & Suits" loading="lazy">
+      <div class="lookbook-content">
+        <h3>Designer Suits & Sarees</h3>
+        <p>Elegant silk, georgette, and organza sarees with intricate embroidery and detailing.</p>
+        <a href="#" data-wa class="card-cta-link" target="_blank" rel="noopener">Inquire Designs <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="lookbook-card">
+      <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80" alt="Trendy Western Casuals" loading="lazy">
+      <div class="lookbook-content">
+        <h3>Trendy Western Wear</h3>
+        <p>Modern co-ord sets, dresses, and daily casuals created for effortless elegance.</p>
+        <a href="#" data-wa class="card-cta-link" target="_blank" rel="noopener">Inquire Designs <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services-section" id="services">
+  <div class="section-head">
+    <h2>Why Shop With Mahadev Trends</h2>
+    <p>A seamless shopping experience from fabric selection to doorstep delivery.</p>
+  </div>
+
+  <div class="feature-rows">
+    <div class="feature-row-card">
+      <div class="feature-icon-box"><i class="fa-solid fa-scissors"></i></div>
+      <div class="feature-info">
+        <h3>Custom Stitching & Tailoring</h3>
+        <p>We offer made-to-measure custom stitching service so every piece fits your unique silhouette perfectly.</p>
+        <a href="#" data-wa class="card-cta-link" target="_blank" rel="noopener">Book Measurement Discussion <i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+    </div>
+
+    <div class="feature-row-card">
+      <div class="feature-icon-box"><i class="fa-solid fa-gem"></i></div>
+      <div class="feature-info">
+        <h3>Authentic High-Grade Fabrics</h3>
+        <p>Every garment is constructed using quality-checked fabrics, durable stitching thread, and fine embroidery work.</p>
+        <a href="#" data-wa class="card-cta-link" target="_blank" rel="noopener">Ask About Fabric Details <i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+    </div>
+
+    <div class="feature-row-card">
+      <div class="feature-icon-box"><i class="fa-solid fa-truck-fast"></i></div>
+      <div class="feature-info">
+        <h3>Fast Order Dispatch & Shipping</h3>
+        <p>Prompt dispatch with secure packaging ensuring your orders arrive safely for your upcoming occasions.</p>
+        <a href="#" data-wa class="card-cta-link" target="_blank" rel="noopener">Track or Inquire Order <i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="banner-guarantee">
+  <div class="guarantee-box">
+    <h3>The Mahadev Trends Promise</h3>
+    <p>We focus on clear communication, transparent pricing quotes, and reliable product fulfillment.</p>
+    
+    <div class="guarantee-points">
+      <div class="g-point"><i class="fa-solid fa-shield-check"></i> Quality Verified Fabrics</div>
+      <div class="g-point"><i class="fa-solid fa-shield-check"></i> Accurate Size Guidance</div>
+      <div class="g-point"><i class="fa-solid fa-shield-check"></i> Dedicated WhatsApp Assistance</div>
+    </div>
+
+    <a href="#" data-wa class="btn-primary" style="background: var(--primary-gold);" target="_blank" rel="noopener">
+      <i class="fa-brands fa-whatsapp"></i> Speak With Our Stylist
+    </a>
+  </div>
+</section>
+
+<section class="faq-section" id="faq">
+  <div class="section-head">
+    <h2>Frequently Asked Questions</h2>
+    <p>Answers to common queries regarding ordering, sizing, and shipping.</p>
+  </div>
+
+  <div class="faq-container">
+    <div class="faq-item">
+      <h4>How do I place an order or view current stock?</h4>
+      <p>Simply click any WhatsApp button on this page to connect with our store team. We share active catalog images, size options, and price details directly.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Can I request custom fitting or alterations?</h4>
+      <p>Yes! We offer custom tailoring based on your exact measurement details prior to order finalization.</p>
+    </div>
+    <div class="faq-item">
+      <h4>What are the standard delivery timelines?</h4>
+      <p>Ready-to-ship items are dispatched within 24-48 hours. Custom-stitched orders depend on stitching schedule discussed during booking.</p>
+    </div>
+  </div>
+</section>
+
+<section class="legal-section" id="legal">
+  <div class="legal-container">
+    <div class="section-head" style="text-align: left; margin-bottom: 25px;">
+      <h2>Terms, Disclaimers & Return Policy</h2>
+      <p>Please review our operational terms and standard customer service guidelines.</p>
+    </div>
+
+    <h3>1. Product Orders & Confirmation</h3>
+    <p>All garment inquiries, stock verifications, and price quotes confirmed via official WhatsApp communication form the basis of individual customer orders.</p>
+
+    <h3>2. Color & Display Variation</h3>
+    <p>Minor color variations may occur due to photographic studio lighting or individual display screen settings. Product textures reflect genuine fabric characteristics.</p>
+
+    <h3>3. Returns & Exchange Guidelines</h3>
+    <p>Exchanges or returns for damaged or incorrect items are evaluated upon receipt of unboxing proof. Custom-tailored garments stitched to personal measurements may have specialized return conditions.</p>
+
+    <h3>4. Ad Transparency & Platform Compliance</h3>
+    <p>Mahadev Trends adheres strictly to digital advertising guidelines across search and social ad networks. Images reflect genuine collection representations.</p>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-box">
+    <h2>Ready To Choose Your Outfit?</h2>
+    <p>Chat with Mahadev Trends on WhatsApp today to browse our complete collection and get personalized style recommendations.</p>
+    <a href="#" data-wa class="cta-btn-light" target="_blank" rel="noopener">
+      <i class="fa-brands fa-whatsapp"></i>
+      Chat On WhatsApp Now
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="logo" style="margin-bottom:14px;color:#fff;">
+        <div class="logo-badge"><i class="fa-solid fa-shirt"></i></div>
+        Mahadev Trends
+      </div>
+      <p>Your trusted fashion destination for handpicked ethnic collections, custom tailoring, and designer apparel.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#lookbook">Lookbook</a>
+        <a href="#services">Services</a>
+        <a href="#faq">FAQ</a>
+        <a href="#legal">Terms & Disclaimers</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <div class="footer-links">
+        <a href="#lookbook">Festive & Ethnic</a>
+        <a href="#lookbook">Designer Sarees</a>
+        <a href="#services">Custom Stitching</a>
+        <a href="#lookbook">Western Trends</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact Studio</h4>
+      <p style="margin-bottom:8px;"><i class="fa-solid fa-phone" style="color:var(--primary-gold);margin-right:8px;"></i> +447393922510</p>
+      <p style="margin-bottom:8px;"><i class="fa-brands fa-whatsapp" style="color:var(--primary-gold);margin-right:8px;"></i> WhatsApp Available</p>
+      <p><i class="fa-solid fa-globe" style="color:var(--primary-gold);margin-right:8px;"></i> mahadevtrends.shop</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Mahadev Trends. All Rights Reserved. Compliant with Advertising Policies.</p>
+  </div>
+</footer>
+
+<a href="#" data-wa class="float-wa" target="_blank" rel="noopener" aria-label="Contact Mahadev Trends on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+  const phoneNumber = "+447393922510";
+  const message = encodeURIComponent("Hello! I am interested in exploring the apparel collection at Mahadev Trends. Please share your catalog.");
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+
+  document.querySelectorAll("[data-wa]").forEach(function(link) {
+    link.href = whatsappUrl;
+  });
+</script>
+
+</body>
+</html>
