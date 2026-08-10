@@ -120,18 +120,95 @@ nav {
   transform: translateY(-2px);
 }
 
-/* HERO SECTION (SPLIT LAYOUT) */
+/* HERO SECTION (MOBILE TOP IMAGE LAYOUT) */
 .hero-split {
-  padding: 130px 6% 60px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
+  padding: 110px 6% 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   align-items: center;
   max-width: 1250px;
   margin: 0 auto;
 }
 
-.hero-text-side { text-align: left; }
+/* HERO IMAGE CARD (MOBILE PAR PEHLE/TOP PE DIKHEGI) */
+.hero-image-card {
+  order: 1;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 4px solid #ffffff;
+  box-shadow: var(--card-shadow);
+  display: block;
+  background: #fff;
+  position: relative;
+  text-decoration: none;
+  transition: 0.3s transform ease, 0.3s box-shadow ease;
+}
+
+.hero-image-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(28, 25, 23, 0.12);
+}
+
+.hero-image-card img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  display: block;
+  object-fit: cover;
+}
+
+.image-overlay-box {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  background: rgba(28, 25, 23, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.overlay-info .title {
+  font-size: 13px;
+  font-weight: 800;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.overlay-info .subtitle {
+  font-size: 11px;
+  color: #d6d3d1;
+  font-weight: 500;
+}
+
+.wa-badge-btn {
+  background: #25D366;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 7px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+/* HERO TEXT SIDE (MOBILE PAR IMAGE KE NICHE AAYEGA) */
+.hero-text-side {
+  order: 2;
+  text-align: center;
+}
 
 .badge-tag {
   background: var(--accent-soft);
@@ -141,7 +218,7 @@ nav {
   border-radius: 30px;
   font-size: 12px;
   font-weight: 700;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -149,10 +226,10 @@ nav {
 
 .hero-text-side h1 {
   font-family: 'Outfit', sans-serif;
-  font-size: 42px;
+  font-size: 34px;
   font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 18px;
+  line-height: 1.25;
+  margin-bottom: 16px;
   color: var(--text-primary);
 }
 
@@ -160,23 +237,26 @@ nav {
 
 .hero-text-side p {
   color: var(--text-secondary);
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.7;
-  margin-bottom: 25px;
+  margin-bottom: 22px;
   max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-highlights {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+  align-items: center;
 }
 
 .highlight-item {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   font-size: 14px;
   font-weight: 600;
   color: var(--text-primary);
@@ -184,7 +264,7 @@ nav {
 
 .highlight-item i {
   color: var(--primary-gold);
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .btn-primary {
@@ -208,79 +288,9 @@ nav {
   transform: translateY(-2px);
 }
 
-/* CLICKABLE HERO IMAGE CARD */
-.hero-image-card {
-  width: 100%;
-  border-radius: 24px;
-  overflow: hidden;
-  border: 4px solid #ffffff;
-  box-shadow: var(--card-shadow);
-  display: block;
-  background: #fff;
-  position: relative;
-  text-decoration: none;
-  transition: 0.3s transform ease, 0.3s box-shadow ease;
-}
-
-.hero-image-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 25px 50px rgba(28, 25, 23, 0.12);
-}
-
-.hero-image-card img {
-  width: 100%;
-  height: 480px;
-  display: block;
-  object-fit: cover;
-}
-
-.image-overlay-box {
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  right: 16px;
-  background: rgba(28, 25, 23, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  padding: 12px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.overlay-info .title {
-  font-size: 14px;
-  font-weight: 800;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.overlay-info .subtitle {
-  font-size: 11px;
-  color: #d6d3d1;
-  font-weight: 500;
-}
-
-.wa-badge-btn {
-  background: #25D366;
-  color: #ffffff;
-  font-size: 12px;
-  font-weight: 800;
-  padding: 8px 14px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  white-space: nowrap;
-}
-
-/* STATS HORIZONTAL STRIP */
+/* STATS STRIP */
 .stats-strip-section {
-  padding: 20px 6% 50px;
+  padding: 10px 6% 40px;
 }
 
 .stats-strip {
@@ -289,46 +299,46 @@ nav {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 20px;
-  padding: 25px 30px;
+  padding: 22px 25px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 18px;
   box-shadow: var(--card-shadow);
   text-align: center;
 }
 
 .stat-cell h3 {
   font-family: 'Outfit', sans-serif;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 800;
   color: var(--primary-gold);
 }
 
 .stat-cell p {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--text-secondary);
 }
 
 /* LOOKBOOK / FEATURED CATEGORIES */
 .lookbook-section {
-  padding: 60px 6%;
+  padding: 50px 6%;
   background: var(--bg-subtle);
 }
 
 .section-head {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 35px;
 }
 
 .section-head h2 {
   font-family: 'Outfit', sans-serif;
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 800;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
-.section-head p { color: var(--text-secondary); font-size: 15px; }
+.section-head p { color: var(--text-secondary); font-size: 14px; }
 
 .lookbook-grid {
   display: grid;
@@ -360,11 +370,11 @@ nav {
 }
 
 .lookbook-content {
-  padding: 22px;
+  padding: 20px;
 }
 
 .lookbook-content h3 {
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 700;
   margin-bottom: 6px;
 }
@@ -372,7 +382,7 @@ nav {
 .lookbook-content p {
   color: var(--text-secondary);
   font-size: 13px;
-  margin-bottom: 15px;
+  margin-bottom: 14px;
 }
 
 .card-cta-link {
@@ -387,13 +397,13 @@ nav {
 
 /* SERVICES / ALTERNATING FEATURES */
 .services-section {
-  padding: 70px 6%;
+  padding: 60px 6%;
 }
 
 .feature-rows {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -402,10 +412,10 @@ nav {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 20px;
-  padding: 30px;
+  padding: 25px;
   display: flex;
   align-items: flex-start;
-  gap: 20px;
+  gap: 18px;
   box-shadow: var(--card-shadow);
   transition: 0.3s;
 }
@@ -415,33 +425,33 @@ nav {
 }
 
 .feature-icon-box {
-  width: 52px;
-  height: 52px;
-  min-width: 52px;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
   border-radius: 12px;
   background: var(--accent-soft);
   color: var(--primary-gold);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .feature-info h3 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .feature-info p {
   color: var(--text-secondary);
-  font-size: 14px;
+  font-size: 13px;
   margin-bottom: 12px;
 }
 
 /* QUALITY GUARANTEE BANNER */
 .banner-guarantee {
-  padding: 40px 6% 70px;
+  padding: 30px 6% 60px;
 }
 
 .guarantee-box {
@@ -450,37 +460,37 @@ nav {
   background: var(--text-primary);
   color: #fff;
   border-radius: 24px;
-  padding: 45px 30px;
+  padding: 40px 24px;
   text-align: center;
 }
 
 .guarantee-box h3 {
   font-family: 'Outfit', sans-serif;
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 800;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .guarantee-box p {
   color: #d6d3d1;
-  font-size: 15px;
+  font-size: 14px;
   max-width: 680px;
-  margin: 0 auto 25px;
+  margin: 0 auto 22px;
 }
 
 .guarantee-points {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-  margin-bottom: 30px;
+  gap: 16px;
+  margin-bottom: 25px;
 }
 
 .g-point {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   color: #f5f5f4;
 }
@@ -488,25 +498,25 @@ nav {
 .g-point i { color: var(--primary-gold); }
 
 /* FAQ */
-.faq-section { padding: 60px 6%; background: var(--bg-subtle); }
+.faq-section { padding: 50px 6%; background: var(--bg-subtle); }
 .faq-container {
   max-width: 850px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 14px;
 }
 
 .faq-item {
   background: #fff;
   border: 1px solid var(--border-color);
   border-radius: 14px;
-  padding: 22px;
+  padding: 20px;
   box-shadow: var(--card-shadow);
 }
 
-.faq-item h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-.faq-item p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; }
+.faq-item h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.faq-item p { color: var(--text-secondary); font-size: 13px; line-height: 1.6; }
 
 /* LEGAL & AD COMPLIANCE DISCLAIMER */
 .legal-section {
@@ -520,30 +530,30 @@ nav {
   margin: 0 auto;
 }
 
-.legal-container h3 { font-size: 16px; font-weight: 700; margin: 20px 0 8px; color: var(--text-primary); }
+.legal-container h3 { font-size: 15px; font-weight: 700; margin: 18px 0 6px; color: var(--text-primary); }
 .legal-container h3:first-child { margin-top: 0; }
 .legal-container p { color: var(--text-secondary); font-size: 13px; line-height: 1.7; margin-bottom: 10px; }
 
 /* CTA */
-.cta-section { padding: 40px 6% 80px; }
+.cta-section { padding: 30px 6% 70px; }
 .cta-box {
   max-width: 1250px;
   margin: 0 auto;
   background: var(--primary-gold);
   border-radius: 24px;
-  padding: 45px 20px;
+  padding: 40px 20px;
   text-align: center;
   color: #fff;
 }
 
-.cta-box h2 { font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 800; margin-bottom: 12px; }
-.cta-box p { font-size: 15px; margin: 0 auto 25px; max-width: 600px; opacity: 0.95; }
+.cta-box h2 { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; margin-bottom: 10px; }
+.cta-box p { font-size: 14px; margin: 0 auto 22px; max-width: 600px; opacity: 0.95; }
 
 .cta-btn-light {
   text-decoration: none;
   background: #fff;
   color: var(--text-primary);
-  padding: 14px 32px;
+  padding: 13px 30px;
   border-radius: 50px;
   font-weight: 800;
   font-size: 14px;
@@ -552,8 +562,6 @@ nav {
   gap: 8px;
   transition: 0.3s;
 }
-
-.cta-btn-light:hover { transform: scale(1.02); }
 
 /* FOOTER */
 footer {
@@ -605,9 +613,25 @@ footer {
   transition: 0.3s;
 }
 
-/* RESPONSIVE MEDIA QUERIES */
+/* DESKTOP & TABLET MEDIA QUERIES */
 @media (min-width: 768px) {
-  .hero-split { grid-template-columns: 1.1fr 0.9fr; }
+  .hero-split {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    padding: 140px 6% 60px;
+  }
+  .hero-text-side {
+    order: 1;
+    text-align: left;
+  }
+  .hero-text-side h1 { font-size: 46px; }
+  .hero-text-side p { margin-left: 0; margin-right: 0; }
+  .hero-highlights { align-items: flex-start; }
+  .hero-image-card {
+    order: 2;
+    max-width: 100%;
+  }
   .stats-strip { grid-template-columns: repeat(4, 1fr); }
   .lookbook-grid { grid-template-columns: repeat(3, 1fr); }
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
@@ -622,8 +646,6 @@ footer {
 
 @media (max-width: 767px) {
   .nav-links { display: none; }
-  .hero-text-side h1 { font-size: 34px; }
-  .hero-image-card img { height: 360px; }
 }
 </style>
 </head>
@@ -654,6 +676,19 @@ footer {
 
 <section class="hero-split">
 
+  <a href="#" data-wa class="hero-image-card" target="_blank" rel="noopener" title="Inquire on WhatsApp">
+    <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=80" alt="Mahadev Trends Apparel Collection">
+    <div class="image-overlay-box">
+      <div class="overlay-info">
+        <span class="title"><i class="fa-solid fa-fire"></i> New Season Collection</span>
+        <span class="subtitle">Tap to check size & stock on WhatsApp</span>
+      </div>
+      <div class="wa-badge-btn">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      </div>
+    </div>
+  </a>
+
   <div class="hero-text-side">
     <div class="badge-tag">
       <i class="fa-solid fa-sparkles"></i>
@@ -675,19 +710,6 @@ footer {
       Explore Latest Catalog
     </a>
   </div>
-
-  <a href="#" data-wa class="hero-image-card" target="_blank" rel="noopener" title="Inquire on WhatsApp">
-    <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=80" alt="Mahadev Trends Apparel Collection">
-    <div class="image-overlay-box">
-      <div class="overlay-info">
-        <span class="title"><i class="fa-solid fa-fire"></i> New Season Collection</span>
-        <span class="subtitle">Tap to check size & stock on WhatsApp</span>
-      </div>
-      <div class="wa-badge-btn">
-        <i class="fa-brands fa-whatsapp"></i> WhatsApp
-      </div>
-    </div>
-  </a>
 
 </section>
 
