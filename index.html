@@ -131,7 +131,6 @@ nav {
   margin: 0 auto;
 }
 
-/* HERO IMAGE CARD (MOBILE PAR PEHLE/TOP PE DIKHEGI) */
 .hero-image-card {
   order: 1;
   width: 100%;
@@ -204,7 +203,6 @@ nav {
   white-space: nowrap;
 }
 
-/* HERO TEXT SIDE (MOBILE PAR IMAGE KE NICHE AAYEGA) */
 .hero-text-side {
   order: 2;
   text-align: center;
@@ -613,6 +611,181 @@ footer {
   transition: 0.3s;
 }
 
+.float-wa:hover { transform: scale(1.08); }
+
+/* ========================================================
+   POPUP MODAL OVERLAY (WITH HIGHLIGHTED 20% CIRCLE BADGE)
+   ======================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(28, 25, 23, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-banner-card {
+  width: 100%;
+  max-width: 440px;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  overflow: visible; /* FOR FLOATING BADGE */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4), 0 0 30px rgba(217, 119, 6, 0.25);
+  position: relative;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  padding: 40px 24px 26px;
+  text-align: center;
+}
+
+.modal-overlay.active .modal-banner-card {
+  transform: scale(1);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  background: var(--bg-subtle);
+  color: var(--text-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 10;
+  border: 1px solid var(--border-color);
+  transition: 0.2s;
+}
+
+.modal-close-btn:hover {
+  background: rgba(239, 68, 68, 0.9);
+  color: #fff;
+}
+
+/* HIGHLIGHTED 20% CIRCLE BADGE WITH PULSE GLOW */
+.badge-circle-20 {
+  position: absolute;
+  top: -24px;
+  left: 20px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d97706, #b45309);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  box-shadow: 0 8px 20px rgba(217, 119, 6, 0.5);
+  border: 3px solid #ffffff;
+  animation: pulseGlow 2s infinite ease-in-out;
+  z-index: 15;
+}
+
+.badge-circle-20 .percent-num {
+  font-size: 19px;
+  line-height: 1;
+}
+
+.badge-circle-20 .percent-txt {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.6); }
+  50% { transform: scale(1.08); box-shadow: 0 0 0 12px rgba(217, 119, 6, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(217, 119, 6, 0); }
+}
+
+.popup-icon-badge {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 16px;
+  border-radius: 20px;
+  background: var(--accent-soft);
+  color: var(--primary-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  box-shadow: 0 10px 20px rgba(217, 119, 6, 0.2);
+}
+
+.banner-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 23px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.banner-title span {
+  color: var(--primary-gold);
+}
+
+.banner-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+
+.popup-wa-btn {
+  background: #25D366;
+  color: #ffffff;
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+  transition: 0.2s;
+}
+
+.popup-wa-btn:hover {
+  background: #20ba57;
+  transform: translateY(-2px);
+}
+
+.banner-subtext {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 12px;
+}
+
 /* DESKTOP & TABLET MEDIA QUERIES */
 @media (min-width: 768px) {
   .hero-split {
@@ -651,6 +824,30 @@ footer {
 </head>
 
 <body>
+
+<div class="modal-overlay" id="autoModal">
+  <div class="modal-banner-card" id="modalCard">
+    <div class="modal-close-btn" id="modalCloseBtn" title="Close Banner">✕</div>
+
+    <div class="badge-circle-20">
+      <span class="percent-num">20%</span>
+      <span class="percent-txt">OFF</span>
+    </div>
+
+    <div class="popup-icon-badge">
+      <i class="fa-solid fa-gift"></i>
+    </div>
+
+    <h2 class="banner-title">Get 20% offer on <span>Mahadev Trends</span></h2>
+    <p class="banner-desc"> Custom Tailoring & Festive Ethnic Collections!</p>
+
+    <a href="#" data-wa class="popup-wa-btn" target="_blank" rel="noopener">
+      <i class="fa-brands fa-whatsapp"></i> Chat On WhatsApp Now
+    </a>
+
+    <p class="banner-subtext">Clicking anywhere on this banner opens direct WhatsApp support</p>
+  </div>
+</div>
 
 <nav>
   <div class="logo">
@@ -910,7 +1107,7 @@ footer {
 
     <div class="footer-col">
       <h4>Contact Studio</h4>
-      <p style="margin-bottom:8px;"><i class="fa-solid fa-phone" style="color:var(--primary-gold);margin-right:8px;"></i> +17692639315</p>
+      <p style="margin-bottom:8px;"><i class="fa-solid fa-phone" style="color:var(--primary-gold);margin-right:8px;"></i> +15484625771</p>
       <p style="margin-bottom:8px;"><i class="fa-brands fa-whatsapp" style="color:var(--primary-gold);margin-right:8px;"></i> WhatsApp Available</p>
       <p><i class="fa-solid fa-globe" style="color:var(--primary-gold);margin-right:8px;"></i> mahadevtrends.shop</p>
     </div>
@@ -930,8 +1127,41 @@ footer {
   const message = encodeURIComponent("Hello! I Want Services.");
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
+  // 1. Assign WhatsApp URL to all [data-wa] elements
   document.querySelectorAll("[data-wa]").forEach(function(link) {
     link.href = whatsappUrl;
+  });
+
+  // 2. Modal Popup Logic
+  const autoModal = document.getElementById("autoModal");
+  const modalCard = document.getElementById("modalCard");
+  const modalCloseBtn = document.getElementById("modalCloseBtn");
+
+  // Show Modal Automatically on page load
+  window.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+      autoModal.classList.add("active");
+    }, 200);
+  });
+
+  // Click inside Modal Card -> Redirects to WhatsApp
+  modalCard.addEventListener("click", function(e) {
+    if (!e.target.closest("#modalCloseBtn")) {
+      window.open(whatsappUrl, "_blank");
+    }
+  });
+
+  // Close Modal on Close Button Click
+  modalCloseBtn.addEventListener("click", function(e) {
+    e.stopPropagation();
+    autoModal.classList.remove("active");
+  });
+
+  // Close Modal on Overlay Click (Outside the banner)
+  autoModal.addEventListener("click", function(e) {
+    if (e.target === autoModal) {
+      autoModal.classList.remove("active");
+    }
   });
 </script>
 
